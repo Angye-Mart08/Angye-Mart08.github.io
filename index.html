@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script type="module" src="/Controllers/firebase.js"></script>
+    <script type="module" src="/Controllers/index.js"></script>
+    <link rel="stylesheet" href="/taller/Estilo/interface.css">
+
+    <title>TALLER LOGIN</title>
+
+    <style>
+        #show-password {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<section class="formulario-iniciosesion">
+    <h1>Angie Web</h1>
+    <h2>Iniciar Sesión</h2>
+    <form id="formulario-sesion" class="container">
+        <div class="input-field">
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" class="input">
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" name="password" placeholder="Contraseña" class="input">
+            <i class="fa fa-eye" aria-hidden="true" id="show-password"></i>
+        </div>
+        <button type="submit" class="submit">Iniciar sesión</button>
+        <button type="button" class="facebook-login">Iniciar sesión con Facebook</button>
+        <span><a href="/Templates/registro.html">Crear una nueva cuenta</a></span>
+    </form>
+
+</section>
+
+
+</body>
+</html>

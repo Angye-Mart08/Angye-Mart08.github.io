@@ -1,0 +1,133 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://images.hdqwalls.com/download/eagle-landscape-mountains-minimalist-ez-2560x1440.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    align-items: center;
+}
+
+h1, h2, span, header, .input-field .input, .submit, label a, .create-account-btn {
+    color: #fafafa; /* Blanco suave */
+}
+
+header {
+    font-size: 30px;
+    padding: 0 0 15px 0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #fafafa; /* Blanco suave */
+    text-align: center; /* Centrar los títulos */
+}
+
+.input-field {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000; /* Texto negro */
+}
+
+.input-field .input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ccc; /* Borde gris suave */
+    outline: none;
+    border-radius: 30px;
+    color: #000; /* Texto negro */
+    padding: 0 15px;
+    background: rgba(255, 255, 255, 0.5); /* Menos transparente */
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.input-field .input::placeholder {
+    color: #ccc; /* Color del marcador de posición */
+}
+
+.submit, .create-account-btn {
+    border: 1px solid #ccc; /* Borde gris suave */
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    width: 100%; /* Ambos botones del mismo ancho */
+    cursor: pointer;
+    transition: .3s;
+    background: rgba(255, 255, 255, 0.8); /* Menos transparente */
+    color: #000; /* Texto negro */
+}
+
+.submit:hover, .create-account-btn:hover {
+    background: rgba(255, 255, 255, 0.9); /* Menos transparente */
+    box-shadow: 1px 5px 7px 1px rgba(255, 255, 255, 0.2);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    margin-top: 10px;
+}
+
+label a {
+    text-decoration: none;
+}
+.create-account-btn {
+    border: 1px solid #ccc; /* Borde gris suave */
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    width: 100%; /* Ancho completo */
+    cursor: pointer;
+    transition: .3s;
+    background: rgba(255, 255, 255, 0.8); /* Menos transparente */
+    color: #000; /* Texto negro */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.create-account-btn:hover {
+    background: rgba(255, 255, 255, 0.9); /* Menos transparente */
+ 
+    box-shadow: 1px 5px 7px 1px rgba(255, 255, 255, 0.2); /* Sombra al pasar el mouse */
+}
+
+.facebook-login {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.facebook-login:hover {
+    background-color: #2d4373;
+}
+
