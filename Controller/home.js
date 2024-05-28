@@ -3,7 +3,6 @@ import { userstate, loginout } from '../Controller/firebase.js'
 userstate()
 
 const sesion = document.getElementById('btnlogout')
-const boton = document.getElementById('btndelete')
 
 async function cerrarsesion(){
 
@@ -22,8 +21,4 @@ async function cerrarsesion(){
 
 window.addEventListener('DOMContentLoaded', async()=>{
     sesion.addEventListener('click', cerrarsesion)
-})
-
-boton.addEventListener('click', function() {
-    window.location.href = "/Templates/eliminarusuario.html";
 })

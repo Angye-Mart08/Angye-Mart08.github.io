@@ -1,4 +1,4 @@
-import { registerauth, verification } from './firebase.js';
+import { registerauth, verification, addregister } from './firebase.js';
 
 const formulario = document.getElementById('LogUp-Form');
 const boton = document.getElementById('rgsbtn');
@@ -8,10 +8,18 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 async function register() {
     
-    const email = formulario['edtemail'].value;
-    const psw = formulario['password'].value;
-    const confirmEmail = formulario['confirmEmail'].value;
-    const confirmPassword = formulario['confirmPassword'].value;
+        const nombre = formulario['edtnom'].value;
+        const apellido = formulario['edtape'].value;
+        const fecha = formulario['edtfecha'].value;
+        const cedula = formulario['edtcc'].value;
+        const telefono = formulario['edttlf'].value;
+        const direccion = formulario['edtdirec'].value;
+        const email = formulario['edtemail'].value;
+        const psw = formulario['password'].value;
+        const confirmEmail = formulario['confirmEmail'].value;
+        const confirmPassword = formulario['confirmPassword'].value;
+        const cuenta = formulario['cuentapi'].value;
+
 
     if (!email || !psw || !confirmEmail || !confirmPassword) {
         alert('Por favor completa todos los campos.');
@@ -40,7 +48,7 @@ async function register() {
 
     try {
 
-        const verificar = await registerauth(email, psw);
+        const verificar = await registerauth(email, psw, nombre, apellido, fecha, direccion, telefono, cedula, cuenta);
 
         verification();
 

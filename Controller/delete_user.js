@@ -26,7 +26,7 @@ deleteUserForm.addEventListener( 'submit' , async (event) => {
 });
 
 document.getElementById('backbtn').addEventListener('click', () => {
-    window.location.href = "/index.html";
+    window.location.href = "/Templates/Home.html";
 });
 
 document.getElementById('show-password').addEventListener('click', function() {
