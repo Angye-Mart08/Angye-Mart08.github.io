@@ -1,27 +1,29 @@
-import { registerauth, verification, addregister } from './firebase.js';
+import { registerauth, verification, setregister } from './firebase.js';
 
 const formulario = document.getElementById('LogUp-Form');
 const boton = document.getElementById('rgsbtn');
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 async function register() {
-    
-        const nombre = formulario['edtnom'].value;
-        const apellido = formulario['edtape'].value;
-        const fecha = formulario['edtfecha'].value;
-        const cedula = formulario['edtcc'].value;
-        const telefono = formulario['edttlf'].value;
-        const direccion = formulario['edtdirec'].value;
-        const email = formulario['edtemail'].value;
-        const psw = formulario['password'].value;
-        const confirmEmail = formulario['confirmEmail'].value;
-        const confirmPassword = formulario['confirmPassword'].value;
-        const cuenta = formulario['cuentapi'].value;
+    const nombres = formulario['edtnom'].value;
+    const apellidos = formulario['edtape'].value;
+    const fecha = formulario['edtfecha'].value;
+    const cedula = formulario['edtcc'].value;
+    const estado = formulario['edtstc'].value;
+    const rh = formulario['edtrh'].value;
+    const genero = formulario['edtgnr'].value;
+    const telefono = formulario['edttlf'].value;
+    const direccion = formulario['edtdirec'].value;
+    const email = formulario['edtemail'].value;
+    const psw = formulario['password'].value;
+    const confirmEmail = formulario['confirmEmail'].value;
+    const confirmPassword = formulario['confirmPassword'].value;
+    const accountType = formulario['accountType'].value;
+    const adminPassword = formulario['adminPassword'].value;
 
-
-    if (!email || !psw || !confirmEmail || !confirmPassword) {
+    if (!email || !psw || !confirmEmail || !confirmPassword || !accountType) {
         alert('Por favor completa todos los campos.');
         return;
     }
@@ -41,27 +43,28 @@ async function register() {
         return;
     }
 
-    if (!passwordRegex.test(psw) || !passwordRegex.test(confirmPassword)) {
-        alert('La contraseña debe contener al menos 8 caracteres, incluyendo números, letras minúsculas, mayúsculas y caracteres especiales.');
+    if (!passwordRegex.test(psw)) {
+        alert('La contraseña debe contener al menos 8 caracteres, incluyendo números, letras minúsculas y mayúsculas.');
+        return;
+    }
+
+    if (accountType === 'administrador' && adminPassword !== 'TOBY2024') {
+        alert('Contraseña de administrador incorrecta.');
         return;
     }
 
     try {
+        const verificar = await registerauth(email, psw);
+        
+        await setregister(nombres, apellidos, fecha, cedula, estado, rh, genero, telefono, direccion, email, accountType);
 
-        const verificar = await registerauth(email, psw, nombre, apellido, fecha, direccion, telefono, cedula, cuenta);
+        await verification();
 
-        verification();
-
-        alert('Registro exitoso para ' + email + '. Correo de Verificacion ha sido enviado.');
-        const user = verificar.user;
-        window.location.href="/index.html"
-
-
+        alert('Registro exitoso para ' + email + '. Correo de Verificación ha sido enviado.');
+        window.location.href = "/index.html";
     } catch (error) {
-
         alert('Registro no exitoso para ' + email);
         console.error(error);
-
     }
 }
 

@@ -17,7 +17,7 @@ async function validar() {
 
         // Verificar tipo de cuenta
         if (currentUser) {
-            if (currentUser.cuenta === "administrador") {
+            if (currentUser.tipoCuenta === "administrador") {
                 // Usuario es administrador
                 alert("Bienvenido administrador");
                 window.location.href = "./Templates/viewproducts.html";
