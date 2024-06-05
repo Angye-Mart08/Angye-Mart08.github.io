@@ -48,7 +48,7 @@ async function register() {
         return;
     }
 
-    if (accountType === 'administrador' && adminPassword !== 'TOBY2024+') {
+    if (accountType === 'administrador' && adminPassword !== 'Admin2024+') {
         alert('Contraseña de administrador incorrecta.');
         return;
     }
