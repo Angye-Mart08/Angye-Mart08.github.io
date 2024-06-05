@@ -1,14 +1,16 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js';
 
-// Configuración de Firebase
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyA_yoEdAvFU_zGGwhSgxMh7zytgLow-x9w",
-    authDomain: "proyecto-nube-2.firebaseapp.com",
-    projectId: "proyecto-nube-2",
-    storageBucket: "proyecto-nube-2.appspot.com",
-    messagingSenderId: "467931703400",
-    appId: "1:467931703400:web:621977517d7a47fb4073dd"
+  apiKey: "AIzaSyCbsbKkAnFMOollAOJfUfKtrM9nqD7s_mA",
+  authDomain: "web24-6ec39.firebaseapp.com",
+  databaseURL: "https://web24-6ec39-default-rtdb.firebaseio.com",
+  projectId: "web24-6ec39",
+  storageBucket: "web24-6ec39.appspot.com",
+  messagingSenderId: "368004971300",
+  appId: "1:368004971300:web:69027eaa774fbb826811b1",
+  measurementId: "G-WYPYST3V7Q"
 };
 
 // Inicializar Firebase
