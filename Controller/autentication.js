@@ -16,7 +16,7 @@ async function validar() {
         if (currentUser) {
             if (currentUser.tipoCuenta === "administrador") {
                 alert("Bienvenido administrador");
-                window.location.href = "./ver_usuarios.html";
+                window.location.href = "./Admin.html";
             } else {
                 alert("Bienvenido usuario normal");
                 window.location.href = "./Home.html";
